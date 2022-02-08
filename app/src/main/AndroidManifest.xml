@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DVT_App">
         <activity
+            android:name=".SignUp_Activity"
+            android:exported="false"
+            android:label="SignUp"
+            android:theme="@style/Theme.DVT_App.NoActionBar" />
+        <activity
             android:name=".SignIn_Activity"
             android:exported="true">
             <intent-filter>

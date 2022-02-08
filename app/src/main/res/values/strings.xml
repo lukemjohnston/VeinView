@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">DVT_App</string>
     <string name="welcome">Welcome</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up_phrase">Don\'t have an account? Get one!</string>
+    <string name="Name">Name</string>
+    <string name="Email">Email</string>
+    <string name="Phone">Phone</string>
+    <string name="BirthDay">Birthday</string>
+    <string name="Password">Password</string>
+
 </resources>
