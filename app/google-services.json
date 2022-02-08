@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "515944833127",
+    "firebase_url": "https://dvt-detect-default-rtdb.firebaseio.com",
+    "project_id": "dvt-detect",
+    "storage_bucket": "dvt-detect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515944833127:android:d0d840de5d1674872bb4c2",
+        "android_client_info": {
+          "package_name": "com.example.dvt_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515944833127-ktrcnjam61nj8be4rf3dar6rmma317et.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIlosTaopM4RQU6D-yf4hhjuMrxKkefXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515944833127-ktrcnjam61nj8be4rf3dar6rmma317et.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
