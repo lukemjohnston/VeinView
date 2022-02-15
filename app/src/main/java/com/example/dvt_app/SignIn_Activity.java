@@ -18,7 +18,6 @@ import org.w3c.dom.Text;
 public class SignIn_Activity extends AppCompatActivity {
 
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
-
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
 

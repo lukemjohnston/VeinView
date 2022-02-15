@@ -3,6 +3,7 @@
     <string name="welcome">Welcome</string>
     <string name="log_in">Log In</string>
     <string name="sign_up_phrase">Don\'t have an account? Get one!</string>
+    <string name="username">Username</string>
     <string name="Name">Name</string>
     <string name="Email">Email</string>
     <string name="Phone">Phone</string>
