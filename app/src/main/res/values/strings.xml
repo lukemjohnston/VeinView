@@ -8,5 +8,10 @@
     <string name="Phone">Phone</string>
     <string name="BirthDay">Birthday</string>
     <string name="Password">Password</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_records">Records</string>
+    <string name="title_account">My Account</string>
+
 
 </resources>
