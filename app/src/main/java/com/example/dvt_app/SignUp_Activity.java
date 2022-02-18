@@ -27,13 +27,14 @@ import com.google.firebase.firestore.auth.User;
 
 public class SignUp_Activity extends AppCompatActivity {
 
-    private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseAuth mAuth;
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference mDatabase = database.getReference();
 
 
     @IgnoreExtraProperties
-    public static class User {
+    public class User {
 
         public String Name;
         public String Phone;
@@ -54,7 +55,7 @@ public class SignUp_Activity extends AppCompatActivity {
     public void writeNewUser(String name, String email, String phone, String birthdate, String password) {
 
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {     //creates a authenticated user account
+                .addOnCompleteListener(SignUp_Activity.this, new OnCompleteListener<AuthResult>() {     //creates a authenticated user account
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {      // Sign up success
@@ -86,16 +87,19 @@ public class SignUp_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        mAuth = FirebaseAuth.getInstance();
+
         Button submit = (Button)findViewById(R.id.SignUpButton);
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Name = findViewById(R.id.editTextName).toString();
-                String Email = findViewById(R.id.editTextEmail).toString();
-                String Phone = findViewById(R.id.editTextPhone).toString();
-                String Birthdate = findViewById(R.id.editTextDate).toString();
-                String Password = findViewById(R.id.editTextPassword).toString();
+                String Name = ((TextView) findViewById(R.id.editTextName)).getText().toString();
+                String Email = ((TextView) findViewById(R.id.editTextEmail)).getText().toString();
+                String Phone = ((TextView) findViewById(R.id.editTextPhone)).getText().toString();
+                String Birthdate = ((TextView) findViewById(R.id.editTextDate)).getText().toString();
+                String Password = ((TextView) findViewById(R.id.editTextPassword)).getText().toString();
 
                 writeNewUser(Name, Email, Phone, Birthdate, Password);
 

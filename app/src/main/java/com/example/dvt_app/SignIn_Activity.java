@@ -27,9 +27,9 @@ import org.w3c.dom.Text;
 
 public class SignIn_Activity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    //private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
-    //private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+    private FirebaseAuth mAuth;
+    private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
+    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
     void UserSignIn(String email, String password) {
@@ -62,13 +62,15 @@ public class SignIn_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        mAuth = FirebaseAuth.getInstance();
+
         Button signIn = (Button)findViewById(R.id.SignIn);
         TextView signUp = (TextView) findViewById(R.id.TextViewSignUp);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            //FirebaseAuth.getInstance().signOut();
-            //Toast.makeText(getApplicationContext(), "Signed out", Toast.LENGTH_LONG).show();
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(getApplicationContext(), "Signed out", Toast.LENGTH_LONG).show();
             //Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
             //startActivity(intent);
         } else {
@@ -86,8 +88,8 @@ public class SignIn_Activity extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = findViewById(R.id.EditTextEmail).toString();
-                String password = findViewById(R.id.EditTextPassword).toString();
+                String email = ((TextView) findViewById(R.id.EditTextEmail)).getText().toString();
+                String password = ((TextView) findViewById(R.id.EditTextPassword)).getText().toString();
                 UserSignIn(email, password);
             }
         });
