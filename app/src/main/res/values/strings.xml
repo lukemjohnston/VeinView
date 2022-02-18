@@ -13,6 +13,7 @@
     <string name="title_home">Home</string>
     <string name="title_records">Records</string>
     <string name="title_account">My Account</string>
+    <string name="log_out">Log Out</string>
 
 
 </resources>
