@@ -9,7 +9,14 @@
         android:id="@+id/navigation_home"
         android:name="com.example.dvt_app.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_PPG_Test2"
+            app:destination="@id/PPG_Test" />
+        <action
+            android:id="@+id/action_navigation_home_to_wells_Screen2"
+            app:destination="@id/wells_Screen" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_records"
@@ -22,4 +29,14 @@
         android:name="com.example.dvt_app.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/wells_Screen"
+        android:name="com.example.dvt_app.Wells_Screen"
+        android:label="fragment_wells__screen"
+        tools:layout="@layout/fragment_wells__screen" />
+    <fragment
+        android:id="@+id/PPG_Test"
+        android:name="com.example.dvt_app.PPG_Test"
+        android:label="fragment_p_p_g__test"
+        tools:layout="@layout/fragment_p_p_g__test" />
 </navigation>
