@@ -15,5 +15,7 @@
     <string name="title_account">My Account</string>
     <string name="sign_in_button">Sign In</string>
     <string name="create_account_button">Create Account</string>
+    <string name="login_activity">Login</string>
+    <string name="launch_activity">Launch Activity</string>
 
 </resources>
