@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="550dp"
-        android:layout_height="2000dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.564"
-        app:srcCompat="@drawable/lanuch_iamge" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/imageView1"
+        android:layout_width="572dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/lanuch_iamge"
+        android:alpha="0.9"/>
+
+    <TextView
+        android:id="@+id/launch_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/launch_title"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#8CAEB9"
+        android:layout_marginTop="170dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="45sp"/>
+
+    <TextView
+        android:id="@+id/launch_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="240dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/launch_intro"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#9F9072"
+        android:textSize="18sp"/>
+</FrameLayout>
