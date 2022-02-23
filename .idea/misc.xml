@@ -32,13 +32,16 @@
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2385" />
         <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2385" />
+        <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2385" />
+        <entry key="app/src/main/res/drawable/ic_baseline_person_add_alt_1_24.xml" value="0.2385" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2385" />
+        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2385" />
         <entry key="app/src/main/res/drawable/inputs.xml" value="0.1662322998046875" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.3771345497905344" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.2796798706054688" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22855377197265628" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.22417297363281252" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.24604339599609376" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/fragment_records.xml" value="0.29791666666666666" />
