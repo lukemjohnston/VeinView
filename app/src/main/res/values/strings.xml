@@ -16,6 +16,7 @@
     <string name="login_activity">Login</string>
     <string name="launch_title">DVT APP</string>
     <string name="launch_intro">Your Personal Health Expert</string>
+    <string name="version">Version 1.0</string>
 
     <!-- Button Texts -->
     <string name="sign_in_button">Sign In</string>

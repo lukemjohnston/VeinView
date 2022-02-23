@@ -1,40 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
-    
+    android:layout_height="match_parent" >
 
+    <ImageView
+        android:id="@+id/launch_image"
+        android:layout_width="572dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/login_image"
+        android:alpha="0.8"/>
 
+    <TextView
+        android:id="@+id/launch_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/launch_title"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#D8D8D8"
+        android:layout_marginTop="127dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="45sp"
+        android:alpha="0.85"/>
     <Button
         android:id="@+id/button_sign_in"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="650dp"
+        android:alpha="0.85"
+        android:backgroundTint="#8CAEB9"
+        android:fontFamily="@font/roboto_bold"
+        android:shadowDy="4"
+        android:shadowColor="#000000"
         android:text="@string/sign_in_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299"
-        tools:ignore="MissingConstraints"
+        android:textAllCaps="false"
+        android:textColor="#F7F8F9"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
         />
 
     <Button
         android:id="@+id/button_create_account"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="565dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="588dp"
+        android:alpha="0.85"
+        android:backgroundTint="#fcfcfc"
+        android:fontFamily="@font/roboto_bold"
+        android:shadowDy="4"
+        android:shadowColor="#000000"
         android:text="@string/create_account_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299"
-        tools:ignore="MissingConstraints"
+        android:textAllCaps="false"
+        android:textColor="#5C7881"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/login_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/version"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="#fcfcfc"
+        android:layout_marginTop="790dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="13sp"
+        android:alpha="0.8" />
+
+</FrameLayout>
+
+
+
