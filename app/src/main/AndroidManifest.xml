@@ -16,8 +16,7 @@
         <activity
             android:name=".SignUp_Activity"
             android:exported="false"
-            android:label="SignUp"
-            android:theme="@style/Theme.DVT_App.NoActionBar" />
+            android:label="SignUp" />
         <activity
             android:name=".SignIn_Activity"
             android:exported="false"/>
