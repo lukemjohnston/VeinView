@@ -103,8 +103,12 @@ public class SignUp_Activity extends AppCompatActivity {
 
                 writeNewUser(Name, Email, Phone, Birthdate, Password);
 
-                //Intent intent = new Intent(SignUp_Activity.this, SignIn_Activity.class);
-                //startActivity(intent);
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    Intent intent = new Intent(SignUp_Activity.this, HomeActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }
