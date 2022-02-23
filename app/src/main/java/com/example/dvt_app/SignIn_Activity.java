@@ -91,6 +91,7 @@ public class SignIn_Activity extends AppCompatActivity {
                 String email = ((TextView) findViewById(R.id.EditTextEmail)).getText().toString();
                 String password = ((TextView) findViewById(R.id.EditTextPassword)).getText().toString();
                 UserSignIn(email, password);
+
             }
         });
     }
