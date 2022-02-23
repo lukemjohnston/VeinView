@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -9,71 +10,95 @@
         android:layout_width="572dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/login_image"
-        android:alpha="0.8"/>
+        android:alpha="0.8"
+        android:src="@drawable/login_image" />
 
-    <TextView
-        android:id="@+id/launch_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/launch_title"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="#D8D8D8"
-        android:layout_marginTop="127dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="45sp"
-        android:alpha="0.85"/>
-    <Button
-        android:id="@+id/button_sign_in"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="650dp"
-        android:alpha="0.85"
-        android:backgroundTint="#8CAEB9"
-        android:fontFamily="@font/roboto_bold"
-        android:shadowDy="4"
-        android:shadowColor="#000000"
-        android:text="@string/sign_in_button"
-        android:textAllCaps="false"
-        android:textColor="#F7F8F9"
-        android:textSize="16sp"
-        app:cornerRadius="8dp"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button_create_account"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="588dp"
-        android:alpha="0.85"
-        android:backgroundTint="#fcfcfc"
-        android:fontFamily="@font/roboto_bold"
-        android:shadowDy="4"
-        android:shadowColor="#000000"
-        android:text="@string/create_account_button"
-        android:textAllCaps="false"
-        android:textColor="#5C7881"
-        android:textSize="16sp"
-        app:cornerRadius="8dp"
-        />
+        <TextView
+            android:id="@+id/launch_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="124dp"
+            android:alpha="0.85"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/launch_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#D8D8D8"
+            android:textSize="45sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/login_version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/version"
-        android:fontFamily="@font/roboto_medium"
-        android:textColor="#fcfcfc"
-        android:layout_marginTop="790dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="13sp"
-        android:alpha="0.8" />
+        <Button
+            android:id="@+id/button_sign_in"
+            android:layout_width="270dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="116dp"
+            android:alpha="0.85"
+            android:backgroundTint="#8CAEB9"
+            android:fontFamily="@font/roboto_bold"
+            android:shadowColor="#000000"
+            android:shadowDy="4"
+            android:text="@string/sign_in_button"
+            android:textAllCaps="false"
+            android:textColor="#F7F8F9"
+            android:textSize="16sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/button_create_account"
+            android:layout_width="270dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:alpha="0.85"
+            android:backgroundTint="#fcfcfc"
+            android:fontFamily="@font/roboto_bold"
+            android:shadowColor="#000000"
+            android:shadowDy="4"
+            android:text="@string/create_account_button"
+            android:textAllCaps="false"
+            android:textColor="#5C7881"
+            android:textSize="16sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_sign_in"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/login_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="36dp"
+            android:alpha="0.8"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/version"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fcfcfc"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </FrameLayout>
+
+
 
 
 
