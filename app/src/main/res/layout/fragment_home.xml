@@ -6,42 +6,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2196F3"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    android:backgroundTint="#f7f7f7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dvtInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dvt_info"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginRight="20dp"
+            android:drawableLeft="@drawable/ic_question"
+            android:drawablePadding="5dp"
+            android:textColor="#A6ABAD"
+            android:textSize="15sp"
+            app:layout_constraintHorizontal_bias="0.498" />
+
+        <TextView
+            android:id="@+id/wells_score_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wells_score_info"
+            android:layout_marginTop="60dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:gravity="left"
+            android:fontFamily="@font/roboto"
+
+            android:drawablePadding="5dp"
+            android:textColor="#A6ABAD"
+            android:textSize="15sp"
+            app:layout_constraintHorizontal_bias="0.498" />
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_home"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="267dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:text="@string/wells_screen_button"
+            android:backgroundTint="#82CB70"
+            app:icon="@drawable/ic_baseline_credit_score_24"
+            app:iconGravity="textStart"
+            app:cornerRadius="8dp"
+            android:fontFamily="@font/roboto_bold" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/wells_screen_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TextView
+            android:id="@+id/ppg_test_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ppg_test_info"
+            android:layout_marginTop="50dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:gravity="left"
+            android:fontFamily="@font/roboto"
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/ppg_test_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.154" />
+            android:drawablePadding="5dp"
+            android:textColor="#A6ABAD"
+            android:textSize="15sp"
+            app:layout_constraintHorizontal_bias="0.498" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="267dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:text="@string/ppg_test_button"
+            android:backgroundTint="#8DBBCA"
+            app:icon="@drawable/ic_pencil"
+            app:cornerRadius="8dp"
+            app:iconGravity="textStart"
+            android:fontFamily="@font/roboto_bold"/>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

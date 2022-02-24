@@ -18,13 +18,17 @@
     <string name="launch_intro">Your Personal Health Expert</string>
     <string name="version">Version 1.0</string>
 
+
+    <string name="wells_score_info">The Wells’ score is a number that reflects your risk of developing deep vein thrombosis (DVT). Using this score, your doctor can determine your likelihood of having DVT. This helps your doctor decide whether to proceed with further diagnostic testing, such as a CT scan.</string>
+    <string name="ppg_test_info">Photoplethysmography (PPG) is a simple and low-cost optical technique that can be used to detect blood volume changes in the microvascular bed of tissue. It is often used non-invasively to make measurements at the skin surface*.</string>
     <!-- Button Texts -->
     <string name="sign_in_button">Sign In</string>
     <string name="create_account_button">Create Account</string>
-    <string name="wells_screen_button">Wells Screening Tool</string>
-    <string name="ppg_test_button">PPG Test</string>
+    <string name="wells_screen_button">Get a Wells\' Score</string>
+    <string name="ppg_test_button">Take a PPG Test</string>
     <string name="profile_button">Profile</string>
     <string name="sign_out_button">Sign Out</string>
+    <string name="dvt_info"><u>What is DVT?</u></string>
 
 
 

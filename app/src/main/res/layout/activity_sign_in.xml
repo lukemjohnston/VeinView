@@ -70,7 +70,7 @@
             android:ems="10"
             android:elevation="10dp"
             android:hint="Password"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:minHeight="48dp"
             android:padding="10dp"
             android:shadowDy="4"
