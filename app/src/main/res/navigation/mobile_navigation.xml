@@ -33,7 +33,11 @@
         android:id="@+id/wells_Screen"
         android:name="com.example.dvt_app.Wells_Screen"
         android:label="@string/Wells_title"
-        tools:layout="@layout/fragment_wells__screen" />
+        tools:layout="@layout/fragment_wells__screen" >
+        <action
+            android:id="@+id/action_wells_Screen_to_navigation_records"
+            app:destination="@id/navigation_records" />
+    </fragment>
     <fragment
         android:id="@+id/PPG_Test"
         android:name="com.example.dvt_app.PPG_Test"
