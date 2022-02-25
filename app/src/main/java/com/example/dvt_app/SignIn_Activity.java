@@ -68,13 +68,11 @@ public class SignIn_Activity extends AppCompatActivity {
         TextView signUp = (TextView) findViewById(R.id.TextViewSignUp);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            FirebaseAuth.getInstance().signOut();
-            Toast.makeText(getApplicationContext(), "Signed out", Toast.LENGTH_LONG).show();
-            //Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
-            //startActivity(intent);
-        } else {
-            // No user is signed in
+        if (user != null) {     //user is already signed in
+            //FirebaseAuth.getInstance().signOut();
+            Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
+            startActivity(intent);
         }
 
         signUp.setOnClickListener(new View.OnClickListener() {

@@ -48,7 +48,7 @@
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonWells"
             android:layout_width="267dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
@@ -78,7 +78,7 @@
             app:layout_constraintHorizontal_bias="0.498" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonPPG"
             android:layout_width="267dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"

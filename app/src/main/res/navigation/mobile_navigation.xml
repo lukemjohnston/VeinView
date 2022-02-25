@@ -32,11 +32,11 @@
     <fragment
         android:id="@+id/wells_Screen"
         android:name="com.example.dvt_app.Wells_Screen"
-        android:label="fragment_wells__screen"
+        android:label="@string/Wells_title"
         tools:layout="@layout/fragment_wells__screen" />
     <fragment
         android:id="@+id/PPG_Test"
         android:name="com.example.dvt_app.PPG_Test"
-        android:label="fragment_p_p_g__test"
+        android:label="@string/PPG_title"
         tools:layout="@layout/fragment_p_p_g__test" />
 </navigation>

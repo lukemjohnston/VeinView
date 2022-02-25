@@ -18,7 +18,7 @@
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3494791666666667" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3494791666666667" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3494791666666667" />
-        <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_home.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_sign_in.xml" value="0.3333333333333333" />
@@ -29,6 +29,7 @@
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/fragment_home.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/fragment_notifications.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/fragment_second.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/fragment_wells__screen.xml" value="0.33" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.2385" />
         <entry key="app/src/main/res/drawable/ic_baseline_cake_24.xml" value="0.1975" />
