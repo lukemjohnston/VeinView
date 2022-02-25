@@ -29,10 +29,10 @@
     <string name="profile_button">Profile</string>
     <string name="sign_out_button">Sign Out</string>
     <string name="dvt_info"><u>What is DVT?</u></string>
-    <string name="submit"><u>SUBMIT</u></string>
     <string name="PPG_title"><u>PPG Test</u></string>
     <string name="Wells_title">Well\'s Survey</string>
-
+    <string name="title_wells_criteria">Wells’ Criteria</string>
+    <string name="submit">Submit</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
