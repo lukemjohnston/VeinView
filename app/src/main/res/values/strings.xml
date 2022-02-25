@@ -29,6 +29,9 @@
     <string name="profile_button">Profile</string>
     <string name="sign_out_button">Sign Out</string>
     <string name="dvt_info"><u>What is DVT?</u></string>
+    <string name="submit">Submit</string>
+
+    <string name="title_wells_criteria">Wells’ Criteria</string>
 
 
 
