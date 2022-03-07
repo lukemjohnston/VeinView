@@ -29,7 +29,7 @@
     <string name="profile_button">Profile</string>
     <string name="sign_out_button">Sign Out</string>
     <string name="dvt_info"><u>What is DVT?</u></string>
-    <string name="PPG_title"><u>PPG Test</u></string>
+    <string name="PPG_title">PPG Test</string>
     <string name="Wells_title">Well\'s Survey</string>
     <string name="title_wells_criteria">Wells’ Criteria</string>
     <string name="submit">Submit</string>
@@ -45,6 +45,14 @@
     <string name="question_8">Paralysis, paresis, or recent plaster immobilization of the lower extremity</string>
     <string name="question_9">Previously documented DVT</string>
     <string name="question_10">Alternative diagnosis to DVT as likely or more likely</string>
+
+    <string name="input_1">Upper Left Leg</string>
+    <string name="input_2">Middle Left Leg</string>
+    <string name="input_3">Lower Left Leg</string>
+    <string name="input_4">Upper Right Leg</string>
+    <string name="input_5">Middle Right Leg</string>
+    <string name="input_6">Lower Right Leg</string>
+    <string name="ppg_measurement">mg/dL</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
