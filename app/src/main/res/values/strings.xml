@@ -34,6 +34,17 @@
     <string name="title_wells_criteria">Wells’ Criteria</string>
     <string name="submit">Submit</string>
 
+<!--well's test questions-->
+    <string name="question_1">Active cancer (Treatment or palliation within 6 months)</string>
+    <string name="question_2">Bedridden recently > 3 days or major surgery within 12 weeks</string>
+    <string name="question_3">Calf swelling > 3 cm compared to the other leg</string>
+    <string name="question_4">Collateral (nonvaricose) superficial veins present</string>
+    <string name="question_5">Entire leg swollen</string>
+    <string name="question_6">Localized tenderness along the deep venous system</string>
+    <string name="question_7">Pitting edema, confined to symptomatic leg</string>
+    <string name="question_8">Paralysis, paresis, or recent plaster immobilization of the lower extremity</string>
+    <string name="question_9">Previously documented DVT</string>
+    <string name="question_10">Alternative diagnosis to DVT as likely or more likely</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
