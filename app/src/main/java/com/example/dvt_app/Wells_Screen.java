@@ -2,6 +2,7 @@ package com.example.dvt_app;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -30,6 +31,8 @@ public class Wells_Screen extends Fragment {
 
     @IgnoreExtraProperties
     public class Wells {
+        public String Type;
+        public String Risk;
         public Boolean Question1;
         public Boolean Question2;
         public Boolean Question3;
@@ -40,7 +43,7 @@ public class Wells_Screen extends Fragment {
         public Boolean Question8;
         public Boolean Question9;
         public Boolean Question10;
-        public String Risk;
+
 
         public Wells() {
             // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -48,7 +51,9 @@ public class Wells_Screen extends Fragment {
 
         public Wells(Boolean q1, Boolean q2, Boolean q3, Boolean q4, Boolean q5,
                      Boolean q6, Boolean q7, Boolean q8, Boolean q9,
-                     Boolean q10, String r) {      //fills user variable with the user data
+                     Boolean q10, String r) {
+            this.Type = "Wells";
+            this.Risk = r;                              //fills user variable with the user data
             this.Question1 = q1;
             this.Question2 = q2;
             this.Question3 = q3;
@@ -59,7 +64,7 @@ public class Wells_Screen extends Fragment {
             this.Question8 = q8;
             this.Question9 = q9;
             this.Question10 = q10;
-            this.Risk = r;
+
         }
     }
 
@@ -82,6 +87,8 @@ public class Wells_Screen extends Fragment {
 
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,10 +134,10 @@ public class Wells_Screen extends Fragment {
 
                 assert user != null;
                 mDatabase.child("tests").child(user.getUid())
-                        .child("Wells").child(date).setValue(wells);
+                        .child(date).setValue(wells);
 
                 Navigation.findNavController(v)
-                        .navigate(R.id.action_wells_Screen_to_navigation_records);
+                        .navigate(R.id.action_wells_Screen_to_navigation_home);
             }
         });
         return view;

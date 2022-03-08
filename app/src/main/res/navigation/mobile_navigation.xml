@@ -35,12 +35,18 @@
         android:label="@string/Wells_title"
         tools:layout="@layout/fragment_wells__screen" >
         <action
-            android:id="@+id/action_wells_Screen_to_navigation_records"
-            app:destination="@id/navigation_records" />
+            android:id="@+id/action_wells_Screen_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home" />
     </fragment>
     <fragment
         android:id="@+id/PPG_Test"
         android:name="com.example.dvt_app.PPG_Test"
         android:label="@string/PPG_title"
-        tools:layout="@layout/fragment_p_p_g__test" />
+        tools:layout="@layout/fragment_p_p_g__test" >
+        <action
+            android:id="@+id/action_PPG_Test_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home" />
+    </fragment>
 </navigation>
