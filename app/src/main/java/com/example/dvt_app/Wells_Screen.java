@@ -33,6 +33,7 @@ public class Wells_Screen extends Fragment {
     public class Wells {
         public String Type;
         public String Risk;
+        public String Date;
         public Boolean Question1;
         public Boolean Question2;
         public Boolean Question3;
@@ -51,9 +52,10 @@ public class Wells_Screen extends Fragment {
 
         public Wells(Boolean q1, Boolean q2, Boolean q3, Boolean q4, Boolean q5,
                      Boolean q6, Boolean q7, Boolean q8, Boolean q9,
-                     Boolean q10, String r) {
+                     Boolean q10, String risk, String date) {
             this.Type = "Wells";
-            this.Risk = r;                              //fills user variable with the user data
+            this.Risk = risk;                              //fills user variable with the user data
+            this.Date = date;                              //fills user variable with the user data
             this.Question1 = q1;
             this.Question2 = q2;
             this.Question3 = q3;
@@ -94,7 +96,9 @@ public class Wells_Screen extends Fragment {
             @Override
             public void onClick(View v) {
                 DateFormat df = new SimpleDateFormat("yyyy_MM_dd 'at' HH_mm_ss z");
-                String date = df.format(Calendar.getInstance().getTime());
+                String dateId = df.format(Calendar.getInstance().getTime());
+                DateFormat df2 = new SimpleDateFormat("M/d/yyyy");
+                String date = df2.format(Calendar.getInstance().getTime());
 
                 int riskNum = 0;
                 String risk = null;
@@ -130,11 +134,14 @@ public class Wells_Screen extends Fragment {
 
                 Wells_Screen.Wells wells = new Wells_Screen.Wells(q1.isChecked(), q2.isChecked(),
                         q3.isChecked(), q4.isChecked(), q5.isChecked(), q6.isChecked(),
-                        q7.isChecked(), q8.isChecked(), q9.isChecked(), q10.isChecked(), risk);
+                        q7.isChecked(), q8.isChecked(), q9.isChecked(), q10.isChecked(), risk, date);
 
                 assert user != null;
+
+
+
                 mDatabase.child("tests").child(user.getUid())
-                        .child(date).setValue(wells);
+                        .child(dateId).setValue(wells);
 
                 Navigation.findNavController(v)
                         .navigate(R.id.action_wells_Screen_to_navigation_home);

@@ -33,6 +33,7 @@ public class PPG_Test extends Fragment {
     public class PPG {
         public String Type;
         public String Risk;
+        public String Date;
         public String UpperLeft;
         public String UpperRight;
         public String MiddleLeft;
@@ -45,9 +46,10 @@ public class PPG_Test extends Fragment {
         }
 
         public PPG(String upperLeft, String upperRight, String middleLeft, String middleRight,
-                   String lowerLeft, String lowerRight, String r) {
+                   String lowerLeft, String lowerRight, String risk, String date) {
             this.Type = "PPG";
-            this.Risk = r;                              //fills user variable with the user data
+            this.Risk = risk;                              //fills user variable with the user data
+            this.Date = date;                              //fills user variable with the user data
             this.UpperLeft = upperLeft;
             this.UpperRight = upperRight;
             this.MiddleLeft = middleLeft;
@@ -78,7 +80,9 @@ public class PPG_Test extends Fragment {
             @Override
             public void onClick(View v) {
                 DateFormat df = new SimpleDateFormat("yyyy_MM_dd 'at' HH_mm_ss z");
-                String date = df.format(Calendar.getInstance().getTime());
+                String dateId = df.format(Calendar.getInstance().getTime());
+                DateFormat df2 = new SimpleDateFormat("M/d/yyyy");
+                String date = df2.format(Calendar.getInstance().getTime());
 
                 String risk = "Low";
 
@@ -91,11 +95,11 @@ public class PPG_Test extends Fragment {
 
 
                 PPG_Test.PPG ppg = new PPG_Test.PPG(upperLeft, upperRight, middleLeft, middleRight,
-                        lowerLeft, lowerRight, risk);
+                        lowerLeft, lowerRight, risk, date);
 
                 assert user != null;
                 mDatabase.child("tests").child(user.getUid())
-                        .child(date).setValue(ppg);
+                        .child(dateId).setValue(ppg);
 
                 Navigation.findNavController(v)
                         .navigate(R.id.action_PPG_Test_to_navigation_home);
