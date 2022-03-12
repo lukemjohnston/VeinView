@@ -13,14 +13,22 @@
     <string name="title_home">Home</string>
     <string name="title_records">Records</string>
     <string name="title_account">My Account</string>
+    <string name="title_dvt_info_1">What is DVT?</string>
+    <string name="title_dvt_info_2">DVT Diagnosis</string>
     <string name="login_activity">Login</string>
     <string name="launch_title">DVT APP</string>
     <string name="launch_intro">Your Personal Health Expert</string>
     <string name="version">Version 1.0</string>
 
-
+    <!-- Information Texts -->
     <string name="wells_score_info">The Wells\’ score is a number that reflects your risk of developing deep vein thrombosis (DVT). Using this score, your doctor can determine your likelihood of having DVT. This helps your doctor decide whether to proceed with further diagnostic testing, such as a CT scan.</string>
     <string name="ppg_test_info">Photoplethysmography (PPG) is a simple and low-cost optical technique that can be used to detect blood volume changes in the microvascular bed of tissue. It is often used non-invasively to make measurements at the skin surface*.</string>
+    <string name="DVT_Info_1_1"><b>Deep vein thrombosis (DVT)</b> is a serious condition that occurs when a blood clot forms in a vein located deep inside your body. A blood clot is a clump of blood that’s turned to a solid state. Deep vein blood clots typically form in your thigh or lower leg, but they can also develop in other areas of your body (Healthline, 2021).</string>
+    <string name="DVT_Info_1_2">It is important to know about DVT because it can happen to anybody and can cause serious illness, disability, and in some cases, death. The good news is that DVT is preventable and treatable if discovered early (CDC, 2020).</string>
+    <string name="DVT_Info_2_1">If you have a DVT, it\'s important to get diagnosed right away before it becomes a pulmonary embolism. Once a PE blocks an artery in your lung, all blood flow is reduced or stopped completely, which can cause sudden death.</string>
+    <string name="DVT_Info_2_2">Your healthcare provider will most likely perform a compression ultrasound, but other tests, like a venogram, CT scan, or D-dimer test, can also be used to diagnose DVT. Through a compression ultrasound, your practitioner is able to see the blood clot and the obstruction of blood flow in the vein.</string>
+
+
     <!-- Button Texts -->
     <string name="sign_in_button">Sign In</string>
     <string name="create_account_button">Create Account</string>
@@ -33,8 +41,9 @@
     <string name="Wells_title">Well\'s Survey</string>
     <string name="title_wells_criteria">Wells’ Criteria</string>
     <string name="submit">Submit</string>
+    <string name="dvt_info_next_1">DVT Diagnosis</string>
 
-<!--well's test questions-->
+    <!--well's test questions-->
     <string name="question_1">Active cancer (Treatment or palliation within 6 months)</string>
     <string name="question_2">Bedridden recently > 3 days or major surgery within 12 weeks</string>
     <string name="question_3">Calf swelling > 3 cm compared to the other leg</string>
