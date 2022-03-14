@@ -3,22 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/activity_home.xml" value="0.4384057971014493" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/activity_login.xml" value="0.3109375" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/activity_sign_in.xml" value="0.3109375" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/fragment_account.xml" value="0.55" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/fragment_d_v_t__info.xml" value="0.5" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/fragment_d_v_t__info_2.xml" value="0.55" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/fragment_d_v_t__info_2_.xml" value="0.3109375" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/fragment_home.xml" value="0.4384057971014493" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/fragment_p_p_g__test.xml" value="0.55" />
-        <entry key="..\:/Users/Brentonli/Documents/DVT-App/app/src/main/res/layout/fragment_wells__screen.xml" value="0.55" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3494791666666667" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3494791666666667" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3494791666666667" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/drawable/inputs.xml" value="0.1" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/drawable/title_border.xml" value="0.1" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_home.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_login.xml" value="0.18611111111111112" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_sign_in.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/lukej/Documents/DVT App/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />

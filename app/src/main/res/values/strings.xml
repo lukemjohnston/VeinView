@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DVT_App</string>
+    <string name="app_name">VeinView</string>
     <string name="welcome">Welcome</string>
     <string name="log_in">Log In</string>
     <string name="sign_up_phrase"><u>Don\'t have an account? Get one!</u></string>
@@ -16,8 +16,8 @@
     <string name="title_dvt_info_1">What is DVT?</string>
     <string name="title_dvt_info_2">DVT Diagnosis</string>
     <string name="login_activity">Login</string>
-    <string name="launch_title">DVT APP</string>
-    <string name="launch_intro">Your Personal Health Expert</string>
+    <string name="launch_title">VeinView</string>
+    <string name="launch_intro">Early DVT Detection</string>
     <string name="version">Version 1.0</string>
 
     <!-- Information Texts -->
