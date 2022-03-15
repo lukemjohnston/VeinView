@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.IgnoreExtraProperties;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -142,6 +143,9 @@ public class Wells_Screen extends Fragment {
 
                 mDatabase.child("tests").child(user.getUid())
                         .child(dateId).setValue(wells);
+
+                FancyToast.makeText(getContext(), "TEST ADDED TO RECORDS",
+                        FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
 
                 Navigation.findNavController(v)
                         .navigate(R.id.action_wells_Screen_to_navigation_home);

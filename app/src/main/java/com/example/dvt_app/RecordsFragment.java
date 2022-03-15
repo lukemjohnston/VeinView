@@ -86,9 +86,12 @@ public class RecordsFragment extends Fragment {
                     //Toast.makeText(getActivity(), String.valueOf(risk.size()), Toast.LENGTH_SHORT).show();
                 }
 
+                LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+                mLayoutManager.setReverseLayout(true);
+                mLayoutManager.setStackFromEnd(true);
                 MyAdaptor myAdaptor = new MyAdaptor(getContext(), date, testType, riskImg);
                 recyclerView.setAdapter(myAdaptor);
-                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                recyclerView.setLayoutManager(mLayoutManager);
             }
 
             @Override

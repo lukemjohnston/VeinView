@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.IgnoreExtraProperties;
 import com.google.firebase.firestore.auth.User;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class SignUp_Activity extends AppCompatActivity {
 
@@ -68,14 +69,15 @@ public class SignUp_Activity extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            Toast.makeText(getApplicationContext(), "ACCOUNT CREATED", Toast.LENGTH_LONG).show();
+                                            FancyToast.makeText(getApplicationContext(), "ACCOUNT CREATED",
+                                                    FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
                                         }
                                     });
 
                         } else {    //sign up fails
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "ACCOUNT CREATION FAILED",
-                                    Toast.LENGTH_SHORT).show();
+                            FancyToast.makeText(getApplicationContext(), "ACCOUNT CREATION FAILED",
+                                    FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
                         }
                     }
                 });

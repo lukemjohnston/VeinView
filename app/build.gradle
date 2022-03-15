@@ -54,4 +54,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-analytics'
+
+    implementation 'io.github.shashank02051997:FancyToast:2.0.1'
 }

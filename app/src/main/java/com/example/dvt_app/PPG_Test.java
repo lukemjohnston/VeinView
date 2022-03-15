@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.IgnoreExtraProperties;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -100,6 +101,9 @@ public class PPG_Test extends Fragment {
                 assert user != null;
                 mDatabase.child("tests").child(user.getUid())
                         .child(dateId).setValue(ppg);
+
+                FancyToast.makeText(getContext(), "TEST ADDED TO RECORDS",
+                        FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
 
                 Navigation.findNavController(v)
                         .navigate(R.id.action_PPG_Test_to_navigation_home);

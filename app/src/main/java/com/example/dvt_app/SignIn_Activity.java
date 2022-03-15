@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import org.w3c.dom.Text;
 
@@ -40,8 +41,8 @@ public class SignIn_Activity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-                            Toast.makeText(SignIn_Activity.this, "Welcome",
-                                    Toast.LENGTH_SHORT).show();
+                            FancyToast.makeText(SignIn_Activity.this, "Welcome",
+                                    FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
                             startActivity(intent);
@@ -49,8 +50,8 @@ public class SignIn_Activity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(SignIn_Activity.this, "Authentication failed",
-                                    Toast.LENGTH_SHORT).show();
+                            FancyToast.makeText(SignIn_Activity.this, "Authentication failed",
+                                    FancyToast.LENGTH_LONG, FancyToast.ERROR,false).show();
                         }
                     }
                 });
@@ -70,7 +71,7 @@ public class SignIn_Activity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {     //user is already signed in
             //FirebaseAuth.getInstance().signOut();
-            Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
+            FancyToast.makeText(getApplicationContext(), "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
             Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
             startActivity(intent);
         }
