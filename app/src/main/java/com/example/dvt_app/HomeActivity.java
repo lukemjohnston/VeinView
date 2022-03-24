@@ -22,10 +22,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
 
-    void wellsToDB() {
-
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

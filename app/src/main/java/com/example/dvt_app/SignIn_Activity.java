@@ -50,7 +50,7 @@ public class SignIn_Activity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            FancyToast.makeText(SignIn_Activity.this, "Authentication failed",
+                            FancyToast.makeText(SignIn_Activity.this, "Authentication failed, please check your email and password",
                                     FancyToast.LENGTH_LONG, FancyToast.ERROR,false).show();
                         }
                     }

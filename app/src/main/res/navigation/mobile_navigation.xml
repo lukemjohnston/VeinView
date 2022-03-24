@@ -12,15 +12,19 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_PPG_Test2"
-            app:destination="@id/PPG_Test" />
+            app:destination="@id/PPG_Test"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_navigation_home_to_wells_Screen2"
-            app:destination="@id/wells_Screen" />
+            app:destination="@id/wells_Screen"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_navigation_home_to_DVT_InfoFragment"
             app:destination="@id/DVT_InfoFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
 
     <fragment
@@ -42,6 +46,8 @@
         <action
             android:id="@+id/action_wells_Screen_to_navigation_home"
             app:destination="@id/navigation_home"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             app:popUpTo="@id/navigation_home" />
     </fragment>
     <fragment
@@ -52,6 +58,8 @@
         <action
             android:id="@+id/action_PPG_Test_to_navigation_home"
             app:destination="@id/navigation_home"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             app:popUpTo="@id/navigation_home" />
     </fragment>
     <fragment

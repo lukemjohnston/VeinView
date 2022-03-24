@@ -42,6 +42,7 @@
     <string name="title_wells_criteria">Wells’ Criteria</string>
     <string name="submit">Submit</string>
     <string name="dvt_info_next_1">DVT Diagnosis</string>
+    <string name="log_out"><u>Log Out</u></string>
 
     <!--well's test questions-->
     <string name="question_1">Active cancer (Treatment or palliation within 6 months)</string>
