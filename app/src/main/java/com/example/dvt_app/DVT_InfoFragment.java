@@ -23,17 +23,6 @@ public class DVT_InfoFragment extends Fragment {
         View view;
         view = inflater.inflate(R.layout.fragment_d_v_t__info, container, false);
 
-        dvt_info_next_button_1 = view.findViewById(R.id.dvt_info_next_button_1);
-
-
-        dvt_info_next_button_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v)
-                        .navigate(R.id.action_DVT_InfoFragment_to_DVT_InfoFragment_2);
-            }
-        });
-
         return view;
     }
 }

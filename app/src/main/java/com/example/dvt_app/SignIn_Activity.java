@@ -46,6 +46,7 @@ public class SignIn_Activity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
                             startActivity(intent);
+                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -74,6 +75,7 @@ public class SignIn_Activity extends AppCompatActivity {
             FancyToast.makeText(getApplicationContext(), "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
             Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
             startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }
 
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +83,7 @@ public class SignIn_Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SignIn_Activity.this, SignUp_Activity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 

@@ -11,10 +11,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="843dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="-105dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:id="@+id/wells_banner"
@@ -25,7 +24,8 @@
             android:paddingLeft="15dp"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
-            app:layout_constraintBaseline_toTopOf="parent">
+            app:layout_constraintBaseline_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/wells_title"
@@ -45,6 +45,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="600dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/wells_banner">
@@ -79,7 +81,7 @@
                     android:text="@string/question_1"
                     android:textColor="#363B3C"
                     android:textSize="15sp"
-                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -198,8 +200,9 @@
                 <View
                     android:layout_width="340dp"
                     android:layout_height="1dp"
+                    android:layout_marginTop="32dp"
                     android:background="#D8D8D8"
-                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/question5" />
@@ -348,11 +351,12 @@
                     android:layout_height="41dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
+                    android:alpha="0.85"
                     android:background="@drawable/button"
                     android:backgroundTint="#82CB70"
-                    android:alpha="0.85"
                     android:drawableStart="@drawable/ic_baseline_file_upload_24"
                     android:drawablePadding="0dp"
+                    android:elevation="0dp"
                     android:fontFamily="@font/roboto_bold"
                     android:gravity="center"
                     android:letterSpacing=".05"
@@ -361,7 +365,6 @@
                     android:textAllCaps="false"
                     android:textColor="#F7F8F9"
                     android:textSize="16sp"
-                    android:elevation="0dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/question10" />

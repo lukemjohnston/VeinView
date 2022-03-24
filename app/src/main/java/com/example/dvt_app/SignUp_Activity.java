@@ -109,6 +109,7 @@ public class SignUp_Activity extends AppCompatActivity {
                 if (user != null) {
                     Intent intent = new Intent(SignUp_Activity.this, HomeActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
 
             }

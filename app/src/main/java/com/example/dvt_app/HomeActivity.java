@@ -1,6 +1,7 @@
 package com.example.dvt_app;
 
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -34,38 +35,14 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_records, R.id.navigation_account)
+                R.id.navigation_home, R.id.navigation_records, R.id.navigation_account,
+                R.id.wells_Screen, R.id.PPG_Test, R.id.DVT_InfoFragment)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_home);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        /*Button startWells = (Button)findViewById(R.id.buttonWells);
-        Button startPPG = (Button)findViewById(R.id.buttonPPG);
 
-        //Button wells = (Button)findViewById(R.id.wells_submit);
-
-
-        startWells.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    Navigation.findNavController(v).navigate(R.id.action_navigation_home_to_wells_Screen2);
-            }
-        });
-
-        startPPG.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                wellsToDB();
-            }
-        });
-
-        wells.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                wellsToDB();
-            }
-        });*/
     }
 
 

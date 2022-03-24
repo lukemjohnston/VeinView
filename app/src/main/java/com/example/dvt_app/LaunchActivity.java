@@ -24,7 +24,8 @@ public class LaunchActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(LaunchActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish();
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                //finish();
             }
         }, TIME_OUT);
     }
