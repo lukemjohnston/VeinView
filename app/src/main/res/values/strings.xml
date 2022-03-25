@@ -56,12 +56,8 @@
     <string name="question_9">Previously documented DVT</string>
     <string name="question_10">Alternative diagnosis to DVT as likely or more likely</string>
 
-    <string name="input_1">Upper Left Leg</string>
-    <string name="input_2">Middle Left Leg</string>
-    <string name="input_3">Lower Left Leg</string>
-    <string name="input_4">Upper Right Leg</string>
-    <string name="input_5">Middle Right Leg</string>
-    <string name="input_6">Lower Right Leg</string>
+    <string name="input_1">Left Leg</string>
+    <string name="input_2">Right Leg</string>
     <string name="ppg_measurement">mg/dL</string>
 
     <!-- TODO: Remove or change this placeholder text -->

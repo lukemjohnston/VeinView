@@ -103,13 +103,25 @@ public class SignUp_Activity extends AppCompatActivity {
                 String Birthdate = ((TextView) findViewById(R.id.editTextDate)).getText().toString();
                 String Password = ((TextView) findViewById(R.id.editTextPassword)).getText().toString();
 
-                writeNewUser(Name, Email, Phone, Birthdate, Password);
+                boolean emailCheck = android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches();
 
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null) {
-                    Intent intent = new Intent(SignUp_Activity.this, HomeActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                if (!emailCheck) {
+                    FancyToast.makeText(getApplicationContext(), "Please enter a valid email address",
+                            FancyToast.LENGTH_LONG, FancyToast.WARNING, false).show();
+                }
+                else if (Password.length() <= 6) {
+                    FancyToast.makeText(getApplicationContext(), "Password must be at least 6 characters",
+                            FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
+                }
+                else {
+                    writeNewUser(Name, Email, Phone, Birthdate, Password);
+
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user != null) {
+                        Intent intent = new Intent(SignUp_Activity.this, HomeActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    }
                 }
 
             }

@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,28 +34,19 @@ public class PPG_Test extends Fragment {
         public String Type;
         public String Risk;
         public String Date;
-        public String UpperLeft;
-        public String UpperRight;
-        public String MiddleLeft;
-        public String MiddleRight;
-        public String LowerLeft;
-        public String LowerRight;
+        public String LeftLeg;
+        public String RightLeg;
 
         public PPG() {
             // Default constructor required for calls to DataSnapshot.getValue(User.class)
         }
 
-        public PPG(String upperLeft, String upperRight, String middleLeft, String middleRight,
-                   String lowerLeft, String lowerRight, String risk, String date) {
+        public PPG(String left, String right, String risk, String date) {
             this.Type = "PPG";
-            this.Risk = risk;                              //fills user variable with the user data
-            this.Date = date;                              //fills user variable with the user data
-            this.UpperLeft = upperLeft;
-            this.UpperRight = upperRight;
-            this.MiddleLeft = middleLeft;
-            this.MiddleRight = middleRight;
-            this.LowerLeft = lowerLeft;
-            this.LowerRight = lowerRight;
+            this.Risk = risk;
+            this.Date = date;
+            this.LeftLeg = left;
+            this.RightLeg = right;
         }
     }
 
@@ -67,12 +57,8 @@ public class PPG_Test extends Fragment {
         view = inflater.inflate(R.layout.fragment_p_p_g__test, container, false);
 
         Button submit = view.findViewById(R.id.ppg_submit);
-        TextView ul = view.findViewById(R.id.ppg_upper_left);
-        TextView ur = view.findViewById(R.id.ppg_upper_right);
-        TextView ml = view.findViewById(R.id.ppg_middle_left);
-        TextView mr = view.findViewById(R.id.ppg_middle_right);
-        TextView ll = view.findViewById(R.id.ppg_lower_left);
-        TextView lr = view.findViewById(R.id.ppg_lower_right);
+        TextView leftLeg = view.findViewById(R.id.ppg_left);
+        TextView rightLeg = view.findViewById(R.id.ppg_right);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -87,16 +73,10 @@ public class PPG_Test extends Fragment {
 
                 String risk = "Low";
 
-                String upperLeft = ul.getText().toString();
-                String upperRight = ur.getText().toString();
-                String middleLeft = ml.getText().toString();
-                String middleRight = mr.getText().toString();
-                String lowerLeft = ll.getText().toString();
-                String lowerRight = lr.getText().toString();
+                String left = leftLeg.getText().toString();
+                String right = rightLeg.getText().toString();
 
-
-                PPG_Test.PPG ppg = new PPG_Test.PPG(upperLeft, upperRight, middleLeft, middleRight,
-                        lowerLeft, lowerRight, risk, date);
+                PPG_Test.PPG ppg = new PPG_Test.PPG(left, right, risk, date);
 
                 assert user != null;
                 mDatabase.child("tests").child(user.getUid())
