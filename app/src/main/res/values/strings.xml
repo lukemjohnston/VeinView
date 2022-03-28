@@ -19,6 +19,7 @@
     <string name="launch_title">VeinView</string>
     <string name="launch_intro">Early DVT Detection</string>
     <string name="version">Version 1.0</string>
+    <string name="title_record_info">Record Info</string>
 
     <!-- Information Texts -->
     <string name="wells_score_info">The Wells\’ score is a number that reflects your risk of developing deep vein thrombosis (DVT). Using this score, your doctor can determine your likelihood of having DVT. This helps your doctor decide whether to proceed with further diagnostic testing, such as a CT scan.</string>

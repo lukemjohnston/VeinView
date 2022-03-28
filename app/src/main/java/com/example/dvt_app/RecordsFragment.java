@@ -29,6 +29,7 @@ import java.util.List;
 public class RecordsFragment extends Fragment {
 
     //String date[], testType[];
+    List<String> dataSnaps = new ArrayList<String>(10);
     List<String> date = new ArrayList<String>(10);
     List<String> testType = new ArrayList<String>(10);
     List<String> risk = new ArrayList<String>(10);
@@ -59,6 +60,9 @@ public class RecordsFragment extends Fragment {
                 if(dataSnapshot.exists())
                 {
                     for(DataSnapshot ds : dataSnapshot.getChildren()){
+                        String dataSnap = ds.getKey();
+                        dataSnaps.add(dataSnap);
+
                         String d = ds.child("Date").getValue().toString();
                         date.add(d);
 
@@ -67,6 +71,9 @@ public class RecordsFragment extends Fragment {
 
                         String r = ds.child("Risk").getValue().toString();
                         risk.add(r);
+
+
+
 
                         //Toast.makeText(getActivity(), String.valueOf(risk.size()), Toast.LENGTH_SHORT).show();
                     }
@@ -89,7 +96,7 @@ public class RecordsFragment extends Fragment {
                 LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
                 mLayoutManager.setReverseLayout(true);
                 mLayoutManager.setStackFromEnd(true);
-                MyAdaptor myAdaptor = new MyAdaptor(getContext(), date, testType, riskImg);
+                MyAdaptor myAdaptor = new MyAdaptor(getContext(), dataSnaps, date, testType, riskImg);
                 recyclerView.setAdapter(myAdaptor);
                 recyclerView.setLayoutManager(mLayoutManager);
             }
