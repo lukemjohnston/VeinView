@@ -23,15 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         Button signIn = (Button)findViewById(R.id.button_sign_in);
         Button signUp = (Button)findViewById(R.id.button_create_account);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {     //user is already signed in
-            //FirebaseAuth.getInstance().signOut();
-            FancyToast.makeText(getApplicationContext(), "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-            startActivity(intent);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        }
-
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

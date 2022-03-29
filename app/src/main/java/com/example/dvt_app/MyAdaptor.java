@@ -40,16 +40,17 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from (context);
+        LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.my_record, parent, false );
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.tvDate.setText(date.get(position));
-        holder.tvTest.setText(test.get(position));
-        holder.ivRisk.setImageResource(risk.get(position));
+        int p = position;
+        holder.tvDate.setText(date.get(p));
+        holder.tvTest.setText(test.get(p));
+        holder.ivRisk.setImageResource(risk.get(p));
 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +58,7 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.MyViewHolder> {
                 FancyToast.makeText(context, "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
 
                 Bundle bundle = new Bundle();
-                bundle.putString("dataSnap", dataSnap.get(position));
+                bundle.putString("dataSnap", dataSnap.get(p));
 
                 Navigation.findNavController(view).navigate(R.id.action_navigation_records_to_record_Info, bundle);
             }

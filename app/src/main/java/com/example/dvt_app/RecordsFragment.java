@@ -38,19 +38,53 @@ public class RecordsFragment extends Fragment {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference mDatabase = database.getReference();
     DatabaseReference mRef;
+    MyAdaptor myAdaptor;
+    LinearLayoutManager mLayoutManager;
+    RecyclerView recyclerView;
 
-    int recordNum = 1;
+
+    public class SampleHolder extends RecyclerView.ViewHolder {
+        public SampleHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    // SampleRecycler.java
+    public class SampleRecycler extends RecyclerView.Adapter<SampleHolder> {
+        @Override
+        public SampleHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return null;
+        }
+
+        @Override
+        public void onBindViewHolder(SampleHolder holder, int position) {
+        }
+
+        @Override
+        public int getItemCount() {
+            return 0;
+        }
+    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view;
         view = inflater.inflate(R.layout.fragment_records, container, false);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView = view.findViewById(R.id.recyclerView);
+
+        mLayoutManager = new LinearLayoutManager(getContext());
+        mLayoutManager.setReverseLayout(true);
+        mLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setAdapter(new SampleRecycler());
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         assert user != null;
         String userId = user.getUid();
+
 
         mRef = mDatabase.child("tests").child(userId);
         mRef.addValueEventListener(new ValueEventListener() {
@@ -72,10 +106,6 @@ public class RecordsFragment extends Fragment {
                         String r = ds.child("Risk").getValue().toString();
                         risk.add(r);
 
-
-
-
-                        //Toast.makeText(getActivity(), String.valueOf(risk.size()), Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -93,12 +123,12 @@ public class RecordsFragment extends Fragment {
                     //Toast.makeText(getActivity(), String.valueOf(risk.size()), Toast.LENGTH_SHORT).show();
                 }
 
-                LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-                mLayoutManager.setReverseLayout(true);
-                mLayoutManager.setStackFromEnd(true);
-                MyAdaptor myAdaptor = new MyAdaptor(getContext(), dataSnaps, date, testType, riskImg);
+                //LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+                //mLayoutManager.setReverseLayout(true);
+                //mLayoutManager.setStackFromEnd(true);
+                myAdaptor = new MyAdaptor(getContext(), dataSnaps, date, testType, riskImg);
                 recyclerView.setAdapter(myAdaptor);
-                recyclerView.setLayoutManager(mLayoutManager);
+                //recyclerView.setLayoutManager(mLayoutManager);
             }
 
             @Override

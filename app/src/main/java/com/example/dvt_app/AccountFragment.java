@@ -5,11 +5,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,13 +25,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AccountFragment extends Fragment {
 
-    TextView logOut;
-    TextView name;
-    TextView email;
+    TextView logOut, name, email;
+    Button profile;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference mDatabase = database.getReference();
-    DatabaseReference mRef;
 
 
     @Override
@@ -41,6 +41,7 @@ public class AccountFragment extends Fragment {
         logOut = view.findViewById(R.id.log_out);
         name = view.findViewById(R.id.userName);
         email = view.findViewById(R.id.userEmail);
+        profile = view.findViewById(R.id.profileButton);
 
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -62,7 +63,13 @@ public class AccountFragment extends Fragment {
             }
         });
 
-
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v)
+                        .navigate(R.id.action_navigation_account_to_profileFragment);
+            }
+        });
 
 
         logOut.setOnClickListener(new View.OnClickListener() {

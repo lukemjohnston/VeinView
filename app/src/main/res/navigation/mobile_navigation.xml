@@ -51,7 +51,15 @@
         android:id="@+id/navigation_account"
         android:name="com.example.dvt_app.AccountFragment"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_navigation_account_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
     <fragment
         android:id="@+id/wells_Screen"
         android:name="com.example.dvt_app.Wells_Screen"
@@ -99,4 +107,9 @@
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.dvt_app.ProfileFragment"
+        android:label="@string/my_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
