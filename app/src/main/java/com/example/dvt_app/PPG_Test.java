@@ -50,6 +50,25 @@ public class PPG_Test extends Fragment {
         }
     }
 
+    public void SubmitPPG(View v, String left, String right, String risk) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        DateFormat df = new SimpleDateFormat("yyyy_MM_dd 'at' HH_mm_ss z");
+        String dateId = df.format(Calendar.getInstance().getTime());
+        DateFormat df2 = new SimpleDateFormat("M/d/yyyy");
+        String date = df2.format(Calendar.getInstance().getTime());
+
+        PPG_Test.PPG ppg = new PPG_Test.PPG(left, right, risk, date);
+
+        assert user != null;
+        mDatabase.child("tests").child(user.getUid()).child(dateId).setValue(ppg);
+
+        FancyToast.makeText(getContext(), "TEST ADDED TO RECORDS",
+                FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
+
+        Navigation.findNavController(v).navigate(R.id.action_PPG_Test_to_navigation_home);
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,35 +79,50 @@ public class PPG_Test extends Fragment {
         TextView leftLeg = view.findViewById(R.id.ppg_left);
         TextView rightLeg = view.findViewById(R.id.ppg_right);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
 
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DateFormat df = new SimpleDateFormat("yyyy_MM_dd 'at' HH_mm_ss z");
-                String dateId = df.format(Calendar.getInstance().getTime());
-                DateFormat df2 = new SimpleDateFormat("M/d/yyyy");
-                String date = df2.format(Calendar.getInstance().getTime());
-
-                String risk = "Low";
+                String risk;
 
                 String left = leftLeg.getText().toString();
                 String right = rightLeg.getText().toString();
+                int numL = Integer.parseInt(left);
+                int numR = Integer.parseInt(right);
 
-                PPG_Test.PPG ppg = new PPG_Test.PPG(left, right, risk, date);
+                if ((numL >= 100) || (numR >= 100)) {
+                    FancyToast.makeText(getContext(), "INVALID PPG NUMBER: Value too high",
+                            FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
+                }
+                else if ((numL < 0) || (numR < 0)) {
+                    FancyToast.makeText(getContext(), "INVALID PPG NUMBER: Value must be positive",
+                            FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
+                }
+                else if ((numL >= 21) && (numR >= 21)) {
+                    if ((numL >= 50) || (numR >= 50)) {
+                        FancyToast.makeText(getContext(), "HIGH PGG: Please double check monitor reading",
+                                FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
+                    }
+                    risk = "Low";
+                    SubmitPPG(v, left, right, risk);
+                }
+                else if ((numL <= 10) || (numR <= 10)) {
+                    risk = "High";
+                    SubmitPPG(v, left, right, risk);
+                }
+                else {
+                    risk = "Moderate";
+                    SubmitPPG(v, left, right, risk);
+                }
 
-                assert user != null;
-                mDatabase.child("tests").child(user.getUid())
-                        .child(dateId).setValue(ppg);
-
-                FancyToast.makeText(getContext(), "TEST ADDED TO RECORDS",
-                        FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
-
-                Navigation.findNavController(v)
-                        .navigate(R.id.action_PPG_Test_to_navigation_home);
             }
         });
+
+
         return view;
     }
+
+
 }
