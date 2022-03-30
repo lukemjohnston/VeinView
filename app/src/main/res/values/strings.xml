@@ -54,11 +54,11 @@
     <string name="how_to_read_results_text"><u>How do I read my results?</u></string>
     <string name="how_to_read_results_text_caps"><u>How Do I Read My Results?</u></string>
     <string name="how_to_read_1">Your results for your different tests are recorded in your records screen. On the scrollable list, they display <b>their risk level, the type of test, and the date </b> when the test was taken.</string>
-    <string name="how_to_read_2">A <b>Green</b> risk level indicates that there is no significant risk of the presence of a DVT. You likely do not need to see a doctor for DVT if you receive a Green rating.</string>
-    <string name="how_to_read_3">A <b>Yellow</b> risk level indicates that there is a risk of the presence of a DVT. We would suggest that you take the other screening test to further inform your risk level.</string>
-    <string name="how_to_read_4">A <b>Red</b> risk level indicates that there is significant risk of the presence of a DVT. Once again, we would suggest that you take the other screening test to further inform your risk level.</string>
-    <string name="how_to_read_5">If <b>two Yellow risk levels</b> are obtained between the two tests, then we would suggest exercising caution and informing your physician at your next visit.</string>
-    <string name="how_to_read_6">If <b>two Red risk levels</b> <u>or</u> <b>a Red and a Yellow risk level</b> are obtained between the two tests, then we would suggest contacting your physician to request diagnostic testing.</string>
+    <string name="how_to_read_2">A <font color='#6acc6f'><b>Green</b></font> risk level indicates that there is no significant risk of the presence of a DVT. You likely do not need to see a doctor for DVT if you receive a Green rating.</string>
+    <string name="how_to_read_3">A <font color='#f0d73a'><b>Yellow</b></font> risk level indicates that there is a risk of the presence of a DVT. We would suggest that you take the other screening test to further inform your risk level.</string>
+    <string name="how_to_read_4">A <font color='#f04f3a'><b>Red</b></font> risk level indicates that there is significant risk of the presence of a DVT. Once again, we would suggest that you take the other screening test to further inform your risk level.</string>
+    <string name="how_to_read_5">If <b>two<font color='#f0d73a'> Yellow </font>risk levels</b> are obtained between the two tests, then we would suggest exercising caution and informing your physician at your next visit.</string>
+    <string name="how_to_read_6">If <b>two <font color='#f04f3a'>Red</font> risk levels</b> <u>or</u> <b>a <font color='#f04f3a'>Red</font> and a <font color='#f0d73a'>Yellow</font> risk level</b> are obtained between the two tests, then we would suggest contacting your physician to request diagnostic testing.</string>
     <string name="how_to_read_7"><b>Note:</b> Incorrect placement of the device will negatively affect your readings. Additionally, if you have <b>venous/arterial disorders or a history of them</b>, this may affect your readings. You may need to talk with your doctor about alternative screening methods for your particular condition.</string>
 
 
