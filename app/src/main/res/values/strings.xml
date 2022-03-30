@@ -13,8 +13,10 @@
     <string name="title_home">Home</string>
     <string name="title_records">Records</string>
     <string name="title_account">My Account</string>
-    <string name="title_dvt_info_1">What is DVT?</string>
-    <string name="title_dvt_info_2">DVT Diagnosis</string>
+    <string name="title_dvt_info">What is DVT?</string>
+    <string name="subtitle_dvt_info_1">DVT Diagnosis</string>
+    <string name="subtitle_dvt_info_2">What is VeinView?</string>
+    <string name="subtitle_dvt_info_3">How does it work?</string>
     <string name="login_activity">Login</string>
     <string name="launch_title">VeinView</string>
     <string name="launch_intro">Early DVT Detection</string>
@@ -30,6 +32,12 @@
     <string name="DVT_Info_1_2">It is important to know about DVT because it can happen to anybody and can cause serious illness, disability, and in some cases, death. The good news is that DVT is preventable and treatable if discovered early (CDC, 2020).</string>
     <string name="DVT_Info_2_1">If you have a DVT, it\'s important to get diagnosed right away before it becomes a pulmonary embolism. Once a PE blocks an artery in your lung, all blood flow is reduced or stopped completely, which can cause sudden death.</string>
     <string name="DVT_Info_2_2">Your healthcare provider will most likely perform a compression ultrasound, but other tests, like a venogram, CT scan, or D-dimer test, can also be used to diagnose DVT. Through a compression ultrasound, your practitioner is able to see the blood clot and the obstruction of blood flow in the vein.</string>
+
+    <string name="DVT_Info_3_1">The <b>VeinView DVT Detector</b> is a device that uses photoplethysmography (PPG) to detect blood volume changes. By detecting blood volume changes, we can determine your risk level of having a DVT.</string>
+    <string name="DVT_Info_3_2">This PPG test is <b>not</b> a diagnostic test like the ones listed above. That is, it cannot tell you for certain whether or not you have a DVT. However, it does provide accurate information and a risk level without an lengthy trip to the hospital nor expensive medical equipment.</string>
+    <string name="DVT_Info_3_3">The risk level should be used to determine the necessity of contacting your physician to talk about receiving a diagnostic test for DVT. We would recommend talking to your doctor about a diagnostic test if a <b>red <u>and</u> yellow</b> risk level is evaluated using both the PPG test and the Well\'s Screening Tool <b>in one testing period.</b></string>
+    <string name="DVT_Info_4_1">The <b>VeinView DVT Detector</b> performs PPG testing by using an LED infrared light to send light through the skin and a light sensor (photodiode) to catch light reflecting back after hitting the blood.</string>
+    <string name="DVT_Info_4_2">By reading the changes in light reflection, the device can read approximate levels of bloodflow through the vein. We can use these numbers to calculate DVT risk.</string>
 
 
     <!-- Button Texts -->

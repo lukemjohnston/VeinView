@@ -92,7 +92,7 @@
     <fragment
         android:id="@+id/DVT_InfoFragment"
         android:name="com.example.dvt_app.DVT_InfoFragment"
-        android:label="@string/title_dvt_info_1"
+        android:label="@string/title_dvt_info"
         tools:layout="@layout/fragment_d_v_t__info" />
     <fragment
         android:id="@+id/record_Info"
