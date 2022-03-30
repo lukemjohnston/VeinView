@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +29,8 @@ import java.util.List;
 
 
 public class RecordsFragment extends Fragment {
+
+    TextView HowToRead;
 
     //String date[], testType[];
     List<String> dataSnaps = new ArrayList<String>(10);
@@ -72,6 +76,17 @@ public class RecordsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view;
         view = inflater.inflate(R.layout.fragment_records, container, false);
+
+        HowToRead = view.findViewById(R.id.how_to_read);
+
+        HowToRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v)
+                        .navigate(R.id.action_navigation_records_to_how_To_Read_Fragment);
+            }
+        });
+
 
         recyclerView = view.findViewById(R.id.recyclerView);
 

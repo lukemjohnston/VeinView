@@ -45,6 +45,11 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_navigation_records_to_how_To_Read_Fragment"
+            app:destination="@id/how_To_Read_Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -112,4 +117,9 @@
         android:name="com.example.dvt_app.ProfileFragment"
         android:label="@string/my_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/how_To_Read_Fragment"
+        android:name="com.example.dvt_app.How_To_Read_Fragment"
+        android:label="@string/how_to_read_results_text_caps"
+        tools:layout="@layout/fragment_how__to__read_" />
 </navigation>

@@ -17,19 +17,25 @@
         android:orientation="horizontal"
         android:paddingLeft="15dp"
         android:paddingTop="15dp"
-        android:paddingBottom="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
         app:layout_constraintBaseline_toTopOf="parent">
 
         <TextView
-            android:id="@+id/ppg_title"
-            android:layout_width="200dp"
+            android:id="@+id/how_to_read"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:fontFamily="@font/roboto_bold"
-            android:paddingLeft="10dp"
-            android:text="@string/title_records"
-            android:textColor="#363B3C"
-            android:textSize="25sp"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_question"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/how_to_read_results_text"
+            android:textColor="#A6ABAD"
+            android:textSize="15sp"
             app:layout_constraintHorizontal_bias="0.498" />
 
     </LinearLayout>
