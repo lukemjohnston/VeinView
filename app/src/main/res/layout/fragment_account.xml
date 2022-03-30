@@ -8,47 +8,16 @@
     android:background="#f7f7f7"
     tools:context=".AccountFragment">
 
-
-    <TextView
-        android:id="@+id/log_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:text="@string/log_out"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/profileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/my_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEmail" />
-
-    <Button
-        android:id="@+id/settingsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileButton" />
-
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginTop="75dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        app:srcCompat="@drawable/ic_baseline_account_circle_24"
+        />
 
     <TextView
         android:id="@+id/userName"
@@ -56,9 +25,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="User Name"
+        android:textSize="20sp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#363B3C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
 
     <TextView
         android:id="@+id/userEmail"
@@ -66,7 +39,98 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="user@email.com"
+        android:textColor="#363B3C"
+        android:fontFamily="@font/roboto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:backgroundTint="#fcfcfc"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail">
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/profileButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:alpha="0.85"
+            android:background="@drawable/button"
+            android:backgroundTint="#fcfcfc"
+            android:fontFamily="@font/roboto"
+            android:paddingLeft="13dp"
+            android:gravity="center_vertical"
+            android:letterSpacing=".05"
+            android:shadowDy="4"
+            android:textAllCaps="false"
+            android:textColor="#363B3C"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="13dp"
+            android:text="@string/my_profile"
+            />
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.498"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/userEmail" />-->
+
+
+        <View
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:background="#D8D8D8"
+            android:layout_gravity="center"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/settingsButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:alpha="0.85"
+            android:background="@drawable/button"
+            android:backgroundTint="#fcfcfc"
+            android:fontFamily="@font/roboto"
+            android:paddingLeft="13dp"
+            android:gravity="center_vertical"
+            android:letterSpacing=".05"
+            android:shadowDy="4"
+            android:textAllCaps="false"
+            android:textColor="#363B3C"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_baseline_settings_24"
+            android:drawablePadding="13dp"
+            android:text="@string/settings"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="@string/log_out"
+        android:textSize="15sp"
+        android:textColor="#8CAEB9"
+        android:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
