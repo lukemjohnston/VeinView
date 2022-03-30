@@ -39,6 +39,16 @@
     <string name="DVT_Info_4_1">The <b>VeinView DVT Detector</b> performs PPG testing by using an LED infrared light to send light through the skin and a light sensor (photodiode) to catch light reflecting back after hitting the blood.</string>
     <string name="DVT_Info_4_2">By reading the changes in light reflection, the device can read approximate levels of bloodflow through the vein. We can use these numbers to calculate DVT risk.</string>
 
+    <!-- Instruction Texts -->
+    <string name="Instructions_title">Instructions:</string>
+    <string name="Instructions_1">1. Find a chair in which you can sit comfortably and can stretch out your leg with your heel on the floor.</string>
+    <string name="Instructions_2">2. Attach your VeinView device about 10cm above your inner ankle joint using a piece of double sided tape</string>
+    <string name="Instructions_3">3. Turn on your device to allow it to calibrate to your skin opacity.</string>
+    <string name="Instructions_4">4. Once the device is done calibrating, start the device and perform foot flexions and extensions (Keeping your heel on the ground, bring your toes up, then bring them back down). You will perform 10 such foot flexions, about 1 per second.</string>
+    <string name="Instructions_5">5. After the 10 motions, relax and try to remain as still as you can.</string>
+    <string name="Instructions_6">6. When your device beeps, you may remove the device and read the value. Record this value in the appropriate box below.</string>
+    <string name="Instructions_7">7.Repeat steps 1 through 6 for the other leg.</string>
+
 
     <!-- Button Texts -->
     <string name="sign_in_button">Sign In</string>
