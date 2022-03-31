@@ -69,18 +69,85 @@ public class SignUp_Activity extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            FancyToast.makeText(getApplicationContext(), "ACCOUNT CREATED",
-                                                    FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
+                                            mAuth.getCurrentUser().sendEmailVerification()
+                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        FancyToast.makeText(getApplicationContext(),
+                                                                "Account created:\nPlease verify your email address",
+                                                                FancyToast.LENGTH_LONG, FancyToast.DEFAULT, false).show();
+
+                                                        Intent intent = new Intent(SignUp_Activity.this, LoginActivity.class);
+                                                        startActivity(intent);
+                                                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                                                    }
+                                                    else {
+                                                        Log.w(TAG, "sendEmailVerification:failure", task.getException());
+                                                        FancyToast.makeText(getApplicationContext(), task.getException().getMessage(),
+                                                                FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
+                                                    }
+                                                }
+                                            });
+
                                         }
+
                                     });
 
                         } else {    //sign up fails
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            FancyToast.makeText(getApplicationContext(), "ACCOUNT CREATION FAILED",
+                            FancyToast.makeText(getApplicationContext(), task.getException().getMessage(),
                                     FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
                         }
                     }
                 });
+    }
+
+
+    public void createUser() {
+        String Name = ((TextView) findViewById(R.id.editTextName)).getText().toString();
+        String Email = ((TextView) findViewById(R.id.editTextEmail)).getText().toString();
+        String Phone = ((TextView) findViewById(R.id.editTextPhone)).getText().toString();
+        String Birthdate = ((TextView) findViewById(R.id.editTextDate)).getText().toString();
+        String Password = ((TextView) findViewById(R.id.editTextPassword)).getText().toString();
+
+        boolean emailCheck = android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches();
+
+        if (!emailCheck) {
+            FancyToast.makeText(getApplicationContext(), "Please enter a valid email address",
+                    FancyToast.LENGTH_LONG, FancyToast.WARNING, false).show();
+        }
+        else if (Password.length() <= 6) {
+            FancyToast.makeText(getApplicationContext(), "Password must be at least 6 characters",
+                    FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
+        }
+        if (Name.length() > 50){
+            FancyToast.makeText(getApplicationContext(), "Name can not be larger than 50 characters",
+                    FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+        }
+        else if (Phone.length() > 20) {
+            FancyToast.makeText(getApplicationContext(), "Phone number can not be larger than 20 characters",
+                    FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+        }
+        else if (Birthdate.length() > 15) {
+            FancyToast.makeText(getApplicationContext(), "Birthdate can not be larger than 15 characters",
+                    FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+        }
+        else if ((Name.length() == 0) || (Phone.length() == 0) || (Birthdate.length() == 0)) {
+            FancyToast.makeText(getApplicationContext(), "All text boxes must have a value",
+                    FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+        }
+        else {
+            writeNewUser(Name, Email, Phone, Birthdate, Password);
+
+
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                Intent intent = new Intent(SignUp_Activity.this, HomeActivity.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        }
     }
 
 
@@ -97,33 +164,7 @@ public class SignUp_Activity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Name = ((TextView) findViewById(R.id.editTextName)).getText().toString();
-                String Email = ((TextView) findViewById(R.id.editTextEmail)).getText().toString();
-                String Phone = ((TextView) findViewById(R.id.editTextPhone)).getText().toString();
-                String Birthdate = ((TextView) findViewById(R.id.editTextDate)).getText().toString();
-                String Password = ((TextView) findViewById(R.id.editTextPassword)).getText().toString();
-
-                boolean emailCheck = android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches();
-
-                if (!emailCheck) {
-                    FancyToast.makeText(getApplicationContext(), "Please enter a valid email address",
-                            FancyToast.LENGTH_LONG, FancyToast.WARNING, false).show();
-                }
-                else if (Password.length() <= 6) {
-                    FancyToast.makeText(getApplicationContext(), "Password must be at least 6 characters",
-                            FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
-                }
-                else {
-                    writeNewUser(Name, Email, Phone, Birthdate, Password);
-
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    if (user != null) {
-                        Intent intent = new Intent(SignUp_Activity.this, HomeActivity.class);
-                        startActivity(intent);
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-                    }
-                }
-
+                createUser();
             }
         });
     }

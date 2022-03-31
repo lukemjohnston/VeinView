@@ -87,6 +87,10 @@ public class ProfileFragment extends Fragment {
                     FancyToast.makeText(getContext(), "Birthdate can not be larger than 15 characters",
                             FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
                 }
+                else if ((newName.length() == 0) || (newPhone.length() == 0) || (newBirthday.length() == 0)) {
+                    FancyToast.makeText(getContext(), "All text boxes must have a value",
+                            FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+                }
                 else {
                     //user.updateEmail(newEmail);
                     mDatabase.child("users").child(userId).child("Name").setValue(newName);

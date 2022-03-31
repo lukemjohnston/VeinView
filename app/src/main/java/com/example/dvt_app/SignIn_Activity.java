@@ -29,8 +29,6 @@ import org.w3c.dom.Text;
 public class SignIn_Activity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
-    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
     void UserSignIn(String email, String password) {
@@ -39,19 +37,25 @@ public class SignIn_Activity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FancyToast.makeText(SignIn_Activity.this, "Welcome",
-                                    FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
-                            startActivity(intent);
-                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                            if (user.isEmailVerified()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "signInWithEmail:success");
+                                Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
+                                startActivity(intent);
+                                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                            }
+                            else {
+                                FirebaseAuth.getInstance().signOut();
+
+                                FancyToast.makeText(SignIn_Activity.this, "Please verify your email address",
+                                        FancyToast.LENGTH_LONG, FancyToast.WARNING,false).show();
+                            }
 
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            FancyToast.makeText(SignIn_Activity.this, "Authentication failed, please check your email and password",
+                            FancyToast.makeText(SignIn_Activity.this, task.getException().getMessage(),
                                     FancyToast.LENGTH_LONG, FancyToast.ERROR,false).show();
                         }
                     }
@@ -72,7 +76,7 @@ public class SignIn_Activity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {     //user is already signed in
             //FirebaseAuth.getInstance().signOut();
-            FancyToast.makeText(getApplicationContext(), "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
+            //FancyToast.makeText(getApplicationContext(), "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
             Intent intent = new Intent(SignIn_Activity.this, HomeActivity.class);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -93,11 +97,9 @@ public class SignIn_Activity extends AppCompatActivity {
                 String email = ((TextView) findViewById(R.id.EditTextEmail)).getText().toString();
                 String password = ((TextView) findViewById(R.id.EditTextPassword)).getText().toString();
                 UserSignIn(email, password);
-
             }
         });
     }
-
 
 
 }

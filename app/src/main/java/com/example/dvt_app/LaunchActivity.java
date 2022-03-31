@@ -28,7 +28,7 @@ public class LaunchActivity extends AppCompatActivity {
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null) {     //user is already signed in
-                    FancyToast.makeText(getApplicationContext(), "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
+                    //FancyToast.makeText(getApplicationContext(), "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
                     Intent intent = new Intent(LaunchActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }
