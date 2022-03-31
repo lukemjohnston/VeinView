@@ -24,6 +24,9 @@
     <string name="title_record_info">Record Info</string>
     <string name="my_profile">My Profile</string>
     <string name="settings">Settings</string>
+    <string name="settings_desc">Wow so many settings to choose from!</string>
+    <string name="submit_profile">Submit Changes</string>
+
 
     <!-- Information Texts -->
     <string name="wells_score_info">The Wells\’ score is a number that reflects your risk of developing deep vein thrombosis (DVT). Using this score, your doctor can determine your likelihood of having DVT. This helps your doctor decide whether to proceed with further diagnostic testing, such as a CT scan.</string>

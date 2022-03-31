@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AccountFragment extends Fragment {
 
     TextView logOut, name, email;
-    Button profile;
+    Button profile, settings;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference mDatabase = database.getReference();
@@ -42,6 +42,7 @@ public class AccountFragment extends Fragment {
         name = view.findViewById(R.id.userName);
         email = view.findViewById(R.id.userEmail);
         profile = view.findViewById(R.id.profileButton);
+        settings = view.findViewById(R.id.settingsButton);
 
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -68,6 +69,14 @@ public class AccountFragment extends Fragment {
             public void onClick(View v) {
                 Navigation.findNavController(v)
                         .navigate(R.id.action_navigation_account_to_profileFragment);
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v)
+                        .navigate(R.id.action_navigation_account_to_settingsFragment);
             }
         });
 
