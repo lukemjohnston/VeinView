@@ -12,10 +12,11 @@ android {
 
     defaultConfig {
         applicationId "com.example.dvt_app"
-        minSdk 20
+        minSdk 21
         targetSdk 32
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,4 +57,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
 
     implementation 'io.github.shashank02051997:FancyToast:2.0.1'
+
+    implementation 'com.android.support:multidex:1.0.3'
 }
