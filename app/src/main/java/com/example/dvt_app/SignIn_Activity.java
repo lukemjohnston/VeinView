@@ -31,6 +31,37 @@ public class SignIn_Activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
 
+
+    void ResetPassword() {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String email = ((TextView) findViewById(R.id.EditTextEmail)).getText().toString();
+
+        if (email.length() == 0) {
+            FancyToast.makeText(SignIn_Activity.this, "Please put your account email in the text box, so we can send you a password reset email",
+                    FancyToast.LENGTH_LONG, FancyToast.WARNING,false).show();
+        }
+        else {
+            auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Log.d(TAG, "Email sent.");
+                                FancyToast.makeText(SignIn_Activity.this, "Password reset email has been sent",
+                                        FancyToast.LENGTH_LONG, FancyToast.DEFAULT,false).show();
+                            }
+                            else {
+                                FancyToast.makeText(SignIn_Activity.this, task.getException().getMessage(),
+                                        FancyToast.LENGTH_LONG, FancyToast.ERROR,false).show();
+                            }
+
+                        }
+                    });
+        }
+
+
+    }
+
     void UserSignIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -71,6 +102,7 @@ public class SignIn_Activity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         Button signIn = (Button)findViewById(R.id.SignIn);
+        TextView newPassword = (TextView)findViewById(R.id.ForgotPass);
         TextView signUp = (TextView) findViewById(R.id.TextViewSignUp);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -97,6 +129,13 @@ public class SignIn_Activity extends AppCompatActivity {
                 String email = ((TextView) findViewById(R.id.EditTextEmail)).getText().toString();
                 String password = ((TextView) findViewById(R.id.EditTextPassword)).getText().toString();
                 UserSignIn(email, password);
+            }
+        });
+
+        newPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ResetPassword();
             }
         });
     }

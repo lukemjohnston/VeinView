@@ -26,6 +26,9 @@
     <string name="settings">Settings</string>
     <string name="settings_desc">Wow so many settings to choose from!</string>
     <string name="submit_profile">Save Changes</string>
+    <string name="account_recovery">Forgot Password?</string>
+
+
 
 
     <!-- Information Texts -->
