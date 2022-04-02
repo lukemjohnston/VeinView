@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class RecordsFragment extends Fragment {
@@ -33,7 +34,7 @@ public class RecordsFragment extends Fragment {
     TextView HowToRead;
 
     //String date[], testType[];
-    List<String> dataSnaps = new ArrayList<String>(10);
+    List<String> desc = new ArrayList<String>(10);
     List<String> date = new ArrayList<String>(10);
     List<String> testType = new ArrayList<String>(10);
     List<String> risk = new ArrayList<String>(10);
@@ -77,6 +78,8 @@ public class RecordsFragment extends Fragment {
         View view;
         view = inflater.inflate(R.layout.fragment_records, container, false);
 
+        getData(view);
+
         HowToRead = view.findViewById(R.id.how_to_read);
 
         HowToRead.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +91,12 @@ public class RecordsFragment extends Fragment {
         });
 
 
+
+        return view;
+    }
+
+    public void getData(View view) {
+
         recyclerView = view.findViewById(R.id.recyclerView);
 
         mLayoutManager = new LinearLayoutManager(getContext());
@@ -96,10 +105,11 @@ public class RecordsFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(new SampleRecycler());
 
+
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         assert user != null;
         String userId = user.getUid();
-
 
         mRef = mDatabase.child("tests").child(userId);
         mRef.addValueEventListener(new ValueEventListener() {
@@ -108,10 +118,12 @@ public class RecordsFragment extends Fragment {
 
                 if(dataSnapshot.exists())
                 {
-                    for(DataSnapshot ds : dataSnapshot.getChildren()){
-                        String dataSnap = ds.getKey();
-                        dataSnaps.add(dataSnap);
+                    desc.clear();
+                    date.clear();
+                    testType.clear();
+                    riskImg.clear();
 
+                    for(DataSnapshot ds : dataSnapshot.getChildren()){
                         String d = ds.child("Date").getValue().toString();
                         date.add(d);
 
@@ -121,6 +133,23 @@ public class RecordsFragment extends Fragment {
                         String r = ds.child("Risk").getValue().toString();
                         risk.add(r);
 
+                        String descrpt;
+                        if (test.equals("PPG")) {
+                            descrpt = "Left Leg: " + (Objects.requireNonNull(ds.child("LeftLeg").getValue()).toString())
+                                    + "\n\nRight Leg: " + (Objects.requireNonNull(ds.child("RightLeg").getValue()).toString());
+                        } else {
+                            descrpt = "Q1: " + (Objects.requireNonNull(ds.child("Question1").getValue()).toString())
+                                    + "\n\nQ2: " + (Objects.requireNonNull(ds.child("Question2").getValue()).toString())
+                                    + "\n\nQ3: " + (Objects.requireNonNull(ds.child("Question3").getValue()).toString())
+                                    + "\n\nQ4: " + (Objects.requireNonNull(ds.child("Question4").getValue()).toString())
+                                    + "\n\nQ5: " + (Objects.requireNonNull(ds.child("Question5").getValue()).toString())
+                                    + "\n\nQ6: " + (Objects.requireNonNull(ds.child("Question6").getValue()).toString())
+                                    + "\n\nQ7: " + (Objects.requireNonNull(ds.child("Question7").getValue()).toString())
+                                    + "\n\nQ8: " + (Objects.requireNonNull(ds.child("Question8").getValue()).toString())
+                                    + "\n\nQ9: " + (Objects.requireNonNull(ds.child("Question9").getValue()).toString())
+                                    + "\n\nQ10: " + (Objects.requireNonNull(ds.child("Question10").getValue()).toString());
+                        }
+                        desc.add(descrpt);
                     }
                 }
 
@@ -135,15 +164,12 @@ public class RecordsFragment extends Fragment {
                     if (risk.get(i).equals("High")) {
                         riskImg.add(R.drawable.red_dot);
                     }
-                    //Toast.makeText(getActivity(), String.valueOf(risk.size()), Toast.LENGTH_SHORT).show();
                 }
 
-                //LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-                //mLayoutManager.setReverseLayout(true);
-                //mLayoutManager.setStackFromEnd(true);
-                myAdaptor = new MyAdaptor(getContext(), dataSnaps, date, testType, riskImg);
+
+
+                myAdaptor = new MyAdaptor(getContext(), desc, date, testType, riskImg, risk);
                 recyclerView.setAdapter(myAdaptor);
-                //recyclerView.setLayoutManager(mLayoutManager);
             }
 
             @Override
@@ -151,9 +177,5 @@ public class RecordsFragment extends Fragment {
 
             }
         });
-
-
-
-        return view;
     }
 }

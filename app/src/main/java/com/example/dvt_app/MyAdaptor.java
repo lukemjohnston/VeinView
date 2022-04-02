@@ -25,16 +25,18 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.MyViewHolder> {
 
     List<String> date;
     List<String> test;
-    List<Integer> risk;
+    List<String> riskText;
+    List<Integer> riskIMG;
     Context context;
-    List<String> dataSnap;
+    List<String> desc;
 
-    public MyAdaptor(Context ct, List<String> ds, List<String> d, List<String> t, List<Integer> r) {
-        context = ct;
-        dataSnap = ds;
+    public MyAdaptor(Context c, List<String> dsc, List<String> d, List<String> t, List<Integer> rIMG, List<String> rText) {
+        context = c;
+        desc = dsc;
         date = d;
         test = t;
-        risk = r;
+        riskIMG = rIMG;
+        riskText = rText;
     }
 
     @NonNull
@@ -50,15 +52,16 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.MyViewHolder> {
         int p = position;
         holder.tvDate.setText(date.get(p));
         holder.tvTest.setText(test.get(p));
-        holder.ivRisk.setImageResource(risk.get(p));
+        holder.ivRisk.setImageResource(riskIMG.get(p));
 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FancyToast.makeText(context, "Welcome", FancyToast.LENGTH_LONG,FancyToast.DEFAULT,false).show();
-
                 Bundle bundle = new Bundle();
-                bundle.putString("dataSnap", dataSnap.get(p));
+                bundle.putString("desc", desc.get(p));
+                bundle.putString("test", test.get(p));
+                bundle.putString("risk", riskText.get(p));
+                bundle.putString("date", date.get(p));
 
                 Navigation.findNavController(view).navigate(R.id.action_navigation_records_to_record_Info, bundle);
             }

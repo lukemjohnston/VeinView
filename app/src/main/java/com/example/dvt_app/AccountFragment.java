@@ -45,6 +45,7 @@ public class AccountFragment extends Fragment {
         settings = view.findViewById(R.id.settingsButton);
 
 
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         assert user != null;
         String userId = user.getUid();
