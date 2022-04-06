@@ -36,6 +36,16 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/how_to_read_text_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/how_to_read_8"
+                    android:textSize="16sp" />
+
+                <TextView
                     android:id="@+id/how_to_read_text_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

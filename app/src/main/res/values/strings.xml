@@ -66,6 +66,7 @@
     <string name="how_to_read_5">If <b>two<font color='#f0d73a'> Yellow </font>risk levels</b> are obtained between the two tests, then we would suggest exercising caution and informing your physician at your next visit.</string>
     <string name="how_to_read_6">If <b>two <font color='#f04f3a'>Red</font> risk levels</b> <u>or</u> <b>a <font color='#f04f3a'>Red</font> and a <font color='#f0d73a'>Yellow</font> risk level</b> are obtained between the two tests, then we would suggest contacting your physician to request diagnostic testing.</string>
     <string name="how_to_read_7"><b>Note:</b> Incorrect placement of the device will negatively affect your readings. Additionally, if you have <b>venous/arterial disorders or a history of them</b>, this may affect your readings. You may need to talk with your doctor about alternative screening methods for your particular condition.</string>
+    <string name="how_to_read_8"><b>Note:</b> For the PPG Test, higher values (seconds) are associated with lower risk. Lower numbers are associated with higher risk.</string>
 
 
     <!-- Button Texts -->
