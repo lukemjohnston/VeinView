@@ -264,7 +264,7 @@
                     android:text="@string/question_9"
                     android:textColor="#363B3C"
                     android:textSize="15sp"
-                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/question8" />
@@ -313,6 +313,7 @@
                     android:layout_height="41dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="80dp"
                     android:alpha="0.85"
                     android:background="@drawable/button"
                     android:backgroundTint="#82CB70"
@@ -327,6 +328,7 @@
                     android:textAllCaps="false"
                     android:textColor="#F7F8F9"
                     android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/question10" />
