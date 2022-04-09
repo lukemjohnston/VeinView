@@ -80,7 +80,14 @@ public class PPG_Test extends Fragment {
         TextView rightLeg = view.findViewById(R.id.ppg_right);
 
 
-
+        /*PPG Test Values Range
+        * Low (Green) Risk: 21 - 50
+        * Medium (Yellow) Risk: 11 - 20
+        * High (Red) Risk: 0 - 10
+        * Warning: Unusually High Value: 51 - 100
+        * Invalid Value: <0 or >100
+        * Unaccepted Values: Decimal values and String objects (Error handling yet to be implemented)
+        * */
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
