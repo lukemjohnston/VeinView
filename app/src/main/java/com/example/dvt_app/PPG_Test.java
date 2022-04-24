@@ -70,6 +70,37 @@ public class PPG_Test extends Fragment {
     }
 
 
+    public void riskEval(float numL, float numR, View v, String left, String right) {
+        String risk;
+
+        if ((numL >= 100) || (numR >= 100)) {
+            FancyToast.makeText(getContext(), "INVALID PPG NUMBER: Value too high",
+                    FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
+        }
+        else if ((numL < 0) || (numR < 0)) {
+            FancyToast.makeText(getContext(), "INVALID PPG NUMBER: Value must be positive",
+                    FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
+        }
+        else if ((numL >= 21) && (numR >= 21)) {
+            if ((numL >= 50) || (numR >= 50)) {
+                FancyToast.makeText(getContext(), "HIGH PGG: Please double check monitor reading",
+                        FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
+            }
+            risk = "Low";
+            SubmitPPG(v, left, right, risk);
+        }
+        else if ((numL <= 10) || (numR <= 10)) {
+            risk = "High";
+            SubmitPPG(v, left, right, risk);
+        }
+        else {
+            risk = "Moderate";
+            SubmitPPG(v, left, right, risk);
+        }
+
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view;
@@ -80,6 +111,7 @@ public class PPG_Test extends Fragment {
         TextView rightLeg = view.findViewById(R.id.ppg_right);
 
 
+<<<<<<< Updated upstream
         /*PPG Test Values Range
         * Low (Green) Risk: 21 - 50
         * Medium (Yellow) Risk: 11 - 20
@@ -89,44 +121,28 @@ public class PPG_Test extends Fragment {
         * Unaccepted Values: Decimal values and String objects (Error handling yet to be implemented)
         * */
 
+=======
+>>>>>>> Stashed changes
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String risk;
+                float numL, numR;
 
                 String left = leftLeg.getText().toString();
                 String right = rightLeg.getText().toString();
-                int numL = Integer.parseInt(left);
-                int numR = Integer.parseInt(right);
 
-                if ((numL >= 100) || (numR >= 100)) {
-                    FancyToast.makeText(getContext(), "INVALID PPG NUMBER: Value too high",
+                try {
+                    numL = Float.parseFloat(left);
+                    numR = Float.parseFloat(right);
+                    riskEval(numL, numR, v, left, right);
+                }
+                catch (Exception e) {
+                    FancyToast.makeText(getContext(), "INVALID PPG NUMBER",
                             FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
-                }
-                else if ((numL < 0) || (numR < 0)) {
-                    FancyToast.makeText(getContext(), "INVALID PPG NUMBER: Value must be positive",
-                            FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
-                }
-                else if ((numL >= 21) && (numR >= 21)) {
-                    if ((numL >= 50) || (numR >= 50)) {
-                        FancyToast.makeText(getContext(), "HIGH PGG: Please double check monitor reading",
-                                FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
-                    }
-                    risk = "Low";
-                    SubmitPPG(v, left, right, risk);
-                }
-                else if ((numL <= 10) || (numR <= 10)) {
-                    risk = "High";
-                    SubmitPPG(v, left, right, risk);
-                }
-                else {
-                    risk = "Moderate";
-                    SubmitPPG(v, left, right, risk);
                 }
 
             }
         });
-
 
         return view;
     }
