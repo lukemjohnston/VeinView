@@ -73,6 +73,15 @@ public class PPG_Test extends Fragment {
     public void riskEval(float numL, float numR, View v, String left, String right) {
         String risk;
 
+        /*PPG Test Values Range
+         * Low (Green) Risk: 21 - 50
+         * Medium (Yellow) Risk: 11 - 20
+         * High (Red) Risk: 0 - 10
+         * Warning: Unusually High Value: 51 - 100
+         * Invalid Value: <0 or >100
+         * Unaccepted Values: Decimal values and String objects (Error handling yet to be implemented)
+         * */
+
         if ((numL >= 100) || (numR >= 100)) {
             FancyToast.makeText(getContext(), "INVALID PPG NUMBER: Value too high",
                     FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
@@ -110,19 +119,6 @@ public class PPG_Test extends Fragment {
         TextView leftLeg = view.findViewById(R.id.ppg_left);
         TextView rightLeg = view.findViewById(R.id.ppg_right);
 
-
-<<<<<<< Updated upstream
-        /*PPG Test Values Range
-        * Low (Green) Risk: 21 - 50
-        * Medium (Yellow) Risk: 11 - 20
-        * High (Red) Risk: 0 - 10
-        * Warning: Unusually High Value: 51 - 100
-        * Invalid Value: <0 or >100
-        * Unaccepted Values: Decimal values and String objects (Error handling yet to be implemented)
-        * */
-
-=======
->>>>>>> Stashed changes
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
