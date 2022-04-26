@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,12 +19,19 @@ public class LaunchActivity extends AppCompatActivity {
 
     private static int TIME_OUT = 2500; //Time to launch the another activity
 
+    Animation topAnim, bottomAnim;
+    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        
+
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        textView = findViewById(R.id.launch_title);
+        textView.setAnimation(topAnim);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
