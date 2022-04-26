@@ -45,6 +45,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.252" />
         <entry key="app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.2425" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.252" />
+        <entry key="app/src/main/res/drawable/veinview_background.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.3771345497905344" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.16641693115234377" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.20536600748697914" />
